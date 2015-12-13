@@ -8,3 +8,20 @@ label {
 	font: 16px/18px monospace;
 	
 }
+#name {
+	display: inline;
+}
+.title {
+	font-weight: bold;
+}
+.employeeInfo {
+	float: left;
+	margin-right: 20px;
+}
+.container {
+	float: left;
+}
+.employee {
+	float: left;
+	margin-right: 20px;
+}

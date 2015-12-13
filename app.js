@@ -24,7 +24,7 @@ $(document).ready(function(){
 
 function monthlySalary(salary) {
 	salary = parseInt(salary);
-	monthlyCost = Math.round(salary / 12);
+	monthlyCost += Math.round(salary / 12);
 	
 	// return monthlyCost;
 	console.log(monthlyCost);
@@ -32,13 +32,12 @@ function monthlySalary(salary) {
 
 function appendDom(object){
 	console.log(object);
-	$(".container").append("<div></div>");
+	$(".container").append("<div class='employee'></div>");
 	var $el = $(".container").children().last();
 
-	$el.append("<p>" + object.employeeFirstName + "</p>");
-	$el.append("<p>" + object.employeeLastName + "</p>");
-	$el.append("<p>" + object.employeeID + "</p>");
-	$el.append("<p>" + object.employeeTitle + "</p>");
-	$el.append("<p>" + object.employeeSalary + "</p>");
+	$el.append("<p class='title'>Employee Name: </p><p>" + object.employeeFirstName + " " + object.employeeLastName + "</p>");
+	$el.append("<p class='title'>Employee ID: </p><p>" + object.employeeID + "</p>");
+	$el.append("<p class='title'>Employee Title: </p><p>" + object.employeeTitle + "</p>");
+	$el.append("<p class='title'>Employee Salary (Yearly): </p><p>" + object.employeeSalary + "</p>");
 
 };
