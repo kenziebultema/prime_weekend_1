@@ -7,7 +7,6 @@ $(document).ready(function(){
 
 		var values = {};
 
-		console.log($(".employeeInfo").serializeArray());
 		$.each($(".employeeInfo").serializeArray(), function(i, field){
 			values[field.name] = field.value;
 		});
@@ -17,17 +16,20 @@ $(document).ready(function(){
 		array.push(values);
 		monthlySalary(values.employeeSalary);
 		appendDom(values);
+
+		$('.employee').on('click', '.delete', function() {
+			$('p').remove();
+			$('.delete').hide();
+		})
 	
 	});
 });
-
 
 function monthlySalary(salary) {
 	salary = parseInt(salary);
 	monthlyCost += Math.round(salary / 12);
 	
-	// return monthlyCost;
-	console.log(monthlyCost);
+	console.log('Monthly cost of employee salaries: $' + monthlyCost);
 };
 
 function appendDom(object){
@@ -39,5 +41,6 @@ function appendDom(object){
 	$el.append("<p class='title'>Employee ID: </p><p>" + object.employeeID + "</p>");
 	$el.append("<p class='title'>Employee Title: </p><p>" + object.employeeTitle + "</p>");
 	$el.append("<p class='title'>Employee Salary (Yearly): </p><p>" + object.employeeSalary + "</p>");
+	$el.append("<button class='delete'>Remove Entry</button>");
 
 };
