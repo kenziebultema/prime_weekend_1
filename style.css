@@ -17,6 +17,7 @@ label {
 }
 .container {
 	float: left;
+	margin-top: -15px;
 }
 .employee {
 	float: left;
